@@ -8,7 +8,7 @@ import {
   reset
 } from "./redux-js/actions";
 import Button from "./components/buttons";
-import "./Counter.css";
+import "./Calculator.css";
 
 class Counter extends React.Component {
   increment = () => {
