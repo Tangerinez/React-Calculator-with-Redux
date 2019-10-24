@@ -1,22 +1,24 @@
 import React from "react";
 import { connect } from "react-redux";
+import { increment, decrement, reset } from "./actions";
 import "./Counter.css";
 
 class Counter extends React.Component {
   increment = () => {
-    this.props.dispatch({ type: "INCREMENT" });
+    this.props.increment();
   }; // dispatch function and the reducer type is also passed in as props!!!
 
   decrement = () => {
-    this.props.dispatch({ type: "DECREMENT" });
+    this.props.decrement();
   };
 
   reset = () => {
-    this.props.dispatch({ type: "RESET" });
+    this.props.reset();
   };
 
   render() {
     console.log(this.props); // this is the object returned from mapStateToProps!!!
+    console.log(this.props.dispatch);
     return (
       <div className="counter-container">
         <h2>Counter</h2>
@@ -40,4 +42,14 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Counter);
+const mapDispatchToProps = {
+  // abstraction for this.props.dispatch
+  increment,
+  decrement,
+  reset
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Counter);

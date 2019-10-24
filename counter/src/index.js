@@ -1,7 +1,8 @@
 import React from "react";
 import { render } from "react-dom";
 import Counter from "./Counter";
-import { createStore } from "redux";
+import thunk from "redux-thunk";
+import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import { INCREMENT, DECREMENT, RESET } from "./actions";
 import "./index.css";
@@ -30,7 +31,7 @@ function reducer(state = initialState, action) {
   }
 }
 
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(thunk)); // Allows us to dispatch actions inside a reducer
 
 const App = () => (
   <Provider store={store}>
