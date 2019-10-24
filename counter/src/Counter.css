@@ -1,7 +1,15 @@
-.counter-container {
+.divide-btn,
+.multiple-btn,
+.reset-btn {
   text-align: center;
 }
 
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .reset-btn {
-  text-align: center;
+  margin-top: 2em;
 }

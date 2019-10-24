@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { increment, decrement, reset } from "./actions";
+import { increment, decrement, reset } from "./redux-js/actions";
 import "./Counter.css";
 
 class Counter extends React.Component {
@@ -18,15 +18,16 @@ class Counter extends React.Component {
 
   render() {
     console.log(this.props); // this is the object returned from mapStateToProps!!!
-    console.log(this.props.dispatch);
     return (
       <div className="counter-container">
         <h2>Counter</h2>
+        <button className="multiply-btn">x</button>
         <div>
           <button onClick={this.decrement}>-</button>
           <span>{this.props.count}</span>
           <button onClick={this.increment}>+</button>
         </div>
+        <button className="divide-btn">/</button>
         <button onClick={this.reset} className="reset-btn">
           Reset
         </button>
