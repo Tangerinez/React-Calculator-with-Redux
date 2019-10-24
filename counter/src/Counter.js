@@ -1,6 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import { increment, decrement, reset } from "./redux-js/actions";
+import {
+  increment,
+  decrement,
+  multiply,
+  divide,
+  reset
+} from "./redux-js/actions";
+import Button from "./components/buttons";
 import "./Counter.css";
 
 class Counter extends React.Component {
@@ -12,6 +19,14 @@ class Counter extends React.Component {
     this.props.decrement();
   };
 
+  multiplyByTwo = () => {
+    this.props.multiply();
+  };
+
+  divideByTwo = () => {
+    this.props.divide();
+  };
+
   reset = () => {
     this.props.reset();
   };
@@ -21,16 +36,26 @@ class Counter extends React.Component {
     return (
       <div className="counter-container">
         <h2>Counter</h2>
-        <button className="multiply-btn">x</button>
+        <Button
+          operation="x"
+          function={this.multiplyByTwo}
+          class="multiply-btn"
+        />
         <div>
-          <button onClick={this.decrement}>-</button>
-          <span>{this.props.count}</span>
-          <button onClick={this.increment}>+</button>
+          <Button
+            operation="-"
+            function={this.decrement}
+            class="decrement-btn"
+          />
+          <span className="count">{this.props.count}</span>
+          <Button
+            operation="+"
+            function={this.increment}
+            class="increment-btn"
+          />
         </div>
-        <button className="divide-btn">/</button>
-        <button onClick={this.reset} className="reset-btn">
-          Reset
-        </button>
+        <Button operation="/2" function={this.divideByTwo} class="divide-btn" />
+        <Button operation="Reset" function={this.reset} class="reset-btn" />
       </div>
     );
   }
@@ -47,6 +72,8 @@ const mapDispatchToProps = {
   // abstraction for this.props.dispatch
   increment,
   decrement,
+  multiply,
+  divide,
   reset
 };
 

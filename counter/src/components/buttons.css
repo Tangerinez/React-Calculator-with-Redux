@@ -1,0 +1,9 @@
+.divide-btn,
+.multiply-btn,
+.reset-btn {
+  text-align: center;
+}
+
+.reset-btn {
+  margin-top: 2em;
+}

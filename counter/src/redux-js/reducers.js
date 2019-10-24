@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT, RESET } from "./constants";
+import { INCREMENT, DECREMENT, MULTIPLY, DIVIDE, RESET } from "./constants";
 
 const initialState = {
   count: 0
@@ -15,6 +15,14 @@ function reducer(state = initialState, action) {
     case DECREMENT:
       return {
         count: state.count - 1
+      };
+    case MULTIPLY:
+      return {
+        count: state.count * 2
+      };
+    case DIVIDE:
+      return {
+        count: state.count / 2
       };
     case RESET:
       return {
