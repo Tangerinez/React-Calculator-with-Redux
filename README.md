@@ -1,2 +1,2 @@
-# React-Counter-with-Redux
-React Counter with Redux
+# React-Calculator-with-Redux
+React Calculator with Redux
