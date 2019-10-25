@@ -5,6 +5,7 @@ import {
   decrement,
   multiply,
   divide,
+  expression,
   reset
 } from "./redux-js/actions";
 import Button from "./components/buttons";
@@ -27,6 +28,10 @@ class Counter extends React.Component {
     this.props.divide();
   };
 
+  expression = () => {
+    this.props.expression();
+  };
+
   reset = () => {
     this.props.reset();
   };
@@ -37,7 +42,7 @@ class Counter extends React.Component {
       <div className="counter-container">
         <h2>Counter</h2>
         <Button
-          operation="x"
+          operation="x2"
           function={this.multiplyByTwo}
           class="multiply-btn"
         />
@@ -56,6 +61,21 @@ class Counter extends React.Component {
         </div>
         <Button operation="/2" function={this.divideByTwo} class="divide-btn" />
         <Button operation="Reset" function={this.reset} class="reset-btn" />
+        <div className="row">
+          <Button operation="1" />
+          <Button operation="2" />
+          <Button operation="3" />
+        </div>
+        <div className="row">
+          <Button operation="4" />
+          <Button operation="5" />
+          <Button operation="6" />
+        </div>
+        <div className="row">
+          <Button operation="7" />
+          <Button operation="8" />
+          <Button operation="9" />
+        </div>
       </div>
     );
   }
@@ -74,6 +94,7 @@ const mapDispatchToProps = {
   decrement,
   multiply,
   divide,
+  expression,
   reset
 };
 

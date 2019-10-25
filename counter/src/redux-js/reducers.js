@@ -1,7 +1,15 @@
-import { INCREMENT, DECREMENT, MULTIPLY, DIVIDE, RESET } from "./constants";
+import {
+  INCREMENT,
+  DECREMENT,
+  MULTIPLY,
+  DIVIDE,
+  EXPRESSION,
+  RESET
+} from "./constants";
 
 const initialState = {
-  count: 0
+  count: 0,
+  expressionArray: []
 };
 
 // Reducer rule #1: Never return undefined from a reducer
@@ -24,8 +32,14 @@ function reducer(state = initialState, action) {
       return {
         count: state.count / 2
       };
+    case EXPRESSION:
+      return {
+        ...state,
+        expressionArray: state.expressionArray.concat(action)
+      };
     case RESET:
       return {
+        expressionArray: [],
         count: 0
       };
     default:
