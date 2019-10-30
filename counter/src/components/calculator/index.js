@@ -1,6 +1,6 @@
-import Screen from "./calculator/screen";
-import Keypad from "./calculator/keypad";
-import Button from "./calculator/button";
+import Screen from "./screen/screen";
+import Keypad from "./keypad/keypad";
+import Button from "./button/button";
 
 export default {
   Screen,

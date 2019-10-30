@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { calculate } from "./store/actions/calculate";
+import { calculate } from "./store/actions/calculateActions";
 import Calculator from "./components/calculator/index";
 import * as fromCalculator from "./store";
 import "./App.css";
