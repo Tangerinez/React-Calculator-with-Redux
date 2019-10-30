@@ -103,7 +103,7 @@
 .btn--zero {
   flex: 2;
   border-radius: 95px/80px;
-  align-items: end;
+  align-items: flex-end;
   display: flex;
   padding-left: 50px;
 }
