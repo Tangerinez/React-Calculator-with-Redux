@@ -1,13 +1,13 @@
 import React from "react";
 import { render } from "react-dom";
-import Calculator from "./Calculator";
+import App from "./App";
 import { Provider } from "react-redux";
-import store from "./redux-js/store";
+import store from "./store";
 import "./index.css";
 
 render(
   <Provider store={store}>
-    <Calculator />
+    <App />
   </Provider>,
   document.getElementById("root")
 );
